@@ -20,3 +20,15 @@ echo '$name ...'   #name ...
 ```bash
 echo $PWD 
 ```
+
+📍Date:
+```bash
+date   #Fri Feb 8...
+```
+✔️Printing date
+```bash
+echo 'date'    #date
+echo `date`    #Fri Feb 8...
+#or
+echo $(date)   #Fri Feb 8...
+```
