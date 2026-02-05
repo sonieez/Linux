@@ -1,4 +1,4 @@
-📍Switch to **root**
+📍Switch to **root**:
 
 ```bash
 su -
@@ -11,9 +11,16 @@ su -
 ✔️Requires root password
 <hr>
 
-📍Registering the system to Red Hat system
+📍Registering the system to Red Hat system:
 ```bash
 sudo subscription-manager register
 ```
 ✔️Gets temporary root permission <br>
 ✔️Requires user's password
+
+<hr>
+
+📍Adding user:
+```bash
+useradd
+```
