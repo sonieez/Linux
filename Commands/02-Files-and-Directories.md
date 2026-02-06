@@ -70,8 +70,7 @@ cp -r folder1 /folder2    #copying folder1 into folder2 (folder2/folder1)
 ```bash
 mv file5 folder1    #moving file5 into folder1
 ```
-✔️We can also change the name of the file/directory while moving
-```bash
+✔️We can also change the name of the file/directory with it
 mv old-name new-name
 ```
 
