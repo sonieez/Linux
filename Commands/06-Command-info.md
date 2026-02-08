@@ -31,3 +31,14 @@ For example:
 whatis ls
 #ls (1) - list directory contents
 ```
+<hr>
+
+📍Type of a command:
+```bash
+type 
+```
+For example:
+```bash
+type cd
+#cd is a shell builtin
+```
