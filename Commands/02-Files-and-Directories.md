@@ -30,7 +30,11 @@ pwd   #Print Working Directory
 ```bash
 mkdir folder1   
 ```
-✔️Create a *hidden* directory
+❗Create a directory inside a directory
+```bash
+mkdir -p /folder1/folder2
+```
+❗Create a *hidden* directory
 ```bash
 mkdir .folder2  
 ```
@@ -38,12 +42,12 @@ mkdir .folder2
 ```bash
 touch file1   
 ```
-  ❗*To create multiple files by sequence:*
-  ```bash
-  touch file {10...20}  #file10, file11, ..., file20 will be created
-  ```
+❗*To create multiple files by sequence:*
+```bash
+touch file {10...20}  #file10, file11, ..., file20 will be created
+```
   
-✔️Create a *hidden* file 
+❗Create a *hidden* file 
 ```bash
 touch .file2    
 ```
