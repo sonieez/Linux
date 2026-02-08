@@ -22,5 +22,7 @@ sudo subscription-manager register
 
 📍Adding user:
 ```bash
-useradd
+useradd user1
+passwd user1
+#Password: ...
 ```
