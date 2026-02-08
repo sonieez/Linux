@@ -152,3 +152,43 @@ head -n 5 file1    #first 5 rows of file1
 head -n 5 file1 | tail -1   #last one row of the first 5 rows
 ```
 ❗`|`  Pipe = connects commands 
+
+<hr>
+
+📍Searching files:
+```bash
+grep
+```
+For example:
+
+```bash
+grep user1 /etc/passwd
+#Search for lines containing user1 in /etc/passwd
+
+cat /etc/passwd | grep user1
+#Same as above, but using cat to feed the file
+```
+
+Searching Options:
+```bash
+grep ^root /etc/passwd       #Lines that start with “root”
+grep root /etc/passwd        #Lines containing “root” anywhere
+grep -w root /etc/passwd     #Lines where “root” is a whole word
+
+grep bash$ /etc/passwd       #Lines ending with “bash” (usually login shell)
+```
+
+Context Options:
+<ul>
+  <li>-A (after) </li>
+  <li>-B (before) </li>
+  <li>-C (before and after) </li>
+</ul>
+
+```bash
+grep ^root /etc/passwd -A 3     #Lines starting with root plus 3 lines after (A=after)
+
+grep ^root /etc/passwd -B 1     #Lines starting with root plus 1 line before (B=before)
+
+grep ^root /etc/passwd -C 5     #Lines starting with root plus 5 lines before & after (C=context)
+```
