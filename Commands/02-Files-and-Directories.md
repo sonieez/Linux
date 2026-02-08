@@ -38,6 +38,11 @@ mkdir .folder2
 ```bash
 touch file1   
 ```
+  ❗*To create multiple files by sequence:*
+  ```bash
+  touch file {10...20}  #file10, file11, ..., file20 will be created
+  ```
+  
 ✔️Create a *hidden* file 
 ```bash
 touch .file2    
@@ -120,11 +125,34 @@ ls folder1/  #listing content of folder1
 <hr>
 
 📍Editing File Content:
+
+1️⃣Writing inside of the file:
 ```bash
 vim file1
 ```
 ✔️After writing, you need to press `Esc`, then write `:wq!` to save and exit
 
+✔️To delete the row --> press `dd`.
+
+✔️When we have multiple rows in the file, we can numerate rows (in the `esc` mode), by writing `:set number`. After that, we can access any row by simply typing the number `:5` (for example 5th row). 
+
+2️⃣Overwriting:
+```bash
+echo hello > file1   
+#file1 contains = hello
+
+echo bye > file1
+#file1 contains = bye  (hello is overwrited)
+```
+
+3️⃣Adding:
+```bash
+echo hello >> file1
+#file1 contains = hello
+
+echo bye >> file1
+#file1 contains = hello bye
+```
 <hr>
 
 📍Viewing File Content:
@@ -191,4 +219,45 @@ grep ^root /etc/passwd -A 3     #Lines starting with root plus 3 lines after (A=
 grep ^root /etc/passwd -B 1     #Lines starting with root plus 1 line before (B=before)
 
 grep ^root /etc/passwd -C 5     #Lines starting with root plus 5 lines before & after (C=context)
+```
+<hr>
+
+📍Directing errors (results) to files:
+
+✔️Error:
+```bash
+2> error
+#writes errors to error file
+```
+For example:
+```bash
+ls -l filee 2> error
+#when filee does not exist, this command will give an error --> error is directed into the error file
+```
+❗We can direct results into `/dev/null` --> it won't be saved
+
+📍Tailing file context:
+```bash
+tail -f file
+```
+✔️When we write something into the file (with >>), we can view it live in the terminal
+
+<hr>
+
+📍Archive and compress:
+
+✔️Archiving files into one file:
+```bash
+tar cf archive.tar 1*
+#Creates a tar archive named archive.tar containing all files that start with 1.
+```
+✔️Viewing archived files:
+```bash
+tar tf.archive.tar
+#Lists all files inside archive.tar without extracting them.
+```
+✔️Compression (to bzip2, gzip, etc):
+```bash
+bzip2 file           #file.bz2
+gzip archive.tar     #archive.tar.gz
 ```
