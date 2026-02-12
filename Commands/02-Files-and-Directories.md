@@ -187,7 +187,7 @@ head -n 5 file1 | tail -1   #last one row of the first 5 rows
 
 <hr>
 
-📍Searching files:
+📍Searching inside the files:
 ```bash
 grep
 ```
@@ -265,3 +265,11 @@ tar tf.archive.tar
 bzip2 file           #file.bz2
 gzip archive.tar     #archive.tar.gz
 ```
+<hr>
+
+📍Searching file names:
+```bash
+find / -name (file name) -type f 2>/dev/null   #to direct errors to null file
+```
+
+<hr>
