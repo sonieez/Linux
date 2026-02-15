@@ -112,6 +112,7 @@ cat /etc/passwd
 ```bash
 cat /etc/shadow
 ```
+<hr>
 
 📍PASSWORD information:
 
@@ -164,3 +165,30 @@ With `chage`, we can:
    ```bash
    chage -l user1   #we can see minimum, maximum days for password change, warning days, last password change etc.
    ```
+
+<hr>
+
+📍Managing authority:
+
+✔️We can view and change authorities in the `/etc/sudoers` file. By default, there will be this authority:
+```bash
+root  ALL=(ALL)  ALL    #because, root has every right to use any command
+```
+✔️We can either give ALL authority to the user, or only some commands to use:
+1) Giving all authority to a user:
+```bash
+user1  ALL=(ALL)  ALL
+#now we can use any command in user1 (like useradd, passwd etc)
+```
+2) Giving authority for specific commands (other commands can't be used by this user):
+   Firstly, we need to know path of the command with `whereis (command)`. After that, we are going to use it to give authority. For example, `useradd` command:
+   ```bash
+   user2  ALL=(ALL)  /usr/sbin/useradd
+   #now we can use useradd command in user2
+   ```
+   
+❗When using the commands after giving authority to the user, MUST use `sudo`. For example, using `useradd` by user2:
+```bash
+su - user2
+sudo useradd user3   #it will require the password for user2 and add a new user3 after that
+```
