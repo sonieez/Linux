@@ -176,17 +176,25 @@ root  ALL=(ALL)  ALL    #because, root has every right to use any command
 ```
 ✔️We can either give ALL authority to the user, or only some commands to use:
 1) Giving all authority to a user:
-```bash
-user1  ALL=(ALL)  ALL
-#now we can use any command in user1 (like useradd, passwd etc)
-```
-2) Giving authority for specific commands (other commands can't be used by this user):
+   ```bash
+   user1  ALL=(ALL)  ALL
+   #now we can use any command in user1 -- sudo useradd, sudo passwd, etc
+   ```
+2) Giving all authority with `wheel` group:
+
+   Users in `wheel` group can run all commands:
+   ```bash
+   usermod -aG wheel user2
+   #now we can use any command in user2 -- sudo useradd, sudo passwd, etc
+   ```
+4) Giving authority for specific commands (other commands can't be used by this user):
+   
    Firstly, we need to know path of the command with `whereis (command)`. After that, we are going to use it to give authority. For example, `useradd` command:
    ```bash
    user2  ALL=(ALL)  /usr/sbin/useradd
-   #now we can use useradd command in user2
+   #now we can use useradd command in user2 -- sudo useradd user5
    ```
-   
+
 ❗When using the commands after giving authority to the user, MUST use `sudo`. For example, using `useradd` by user2:
 ```bash
 su - user2
