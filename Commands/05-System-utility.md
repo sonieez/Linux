@@ -29,3 +29,11 @@ whereis #command
 echo $0
 #-bash
 ```
+<hr>
+
+📍To view our ports:
+```bash
+netstat -tulpan
+```
+<hr>
+
