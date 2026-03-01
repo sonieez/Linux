@@ -133,6 +133,8 @@ ls folder1/  #listing content of folder1
 1️⃣Writing inside of the file:
 ```bash
 vim file1
+#or
+nano file1    #to exit: ctrl X --> yes --> Enter
 ```
 ✔️After writing, you need to press `Esc`, then write `:wq!` to save and exit
 
