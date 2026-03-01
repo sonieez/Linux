@@ -90,11 +90,55 @@ If execution bit is missing but special bit is set, it shows as uppercase:
 ```
 <hr>
 
-📍Change Owener and Group:
+📍Change Owner and Group:
 
 ```bash
-chown (owner):(roup) file
+chown (owner):(group) file
 
 #For example:
 chown user1:group1 file1
 ```
+
+<hr>
+
+📍User Mask:
+
+✔️`umask` (user mask) is a Linux command that controls the default permissions of newly created files and directories.
+
+✔️When you create a new file or directory, Linux gives it default permissions.
+`umask` removes some of these permissions for security reasons.
+
+❗So, umask does not add permissions — it **removes** permissions.
+
+✔️Default permissions:
+<ul>
+  <li>Files --> 666 (rw-rw-rw-)</li>
+  <li>Directories --> 777 (rwxrwxrwx)</li>
+</ul>
+
+✔️Formula:
+`Default Permission - umask = Final Permission`
+
+Example: 
+```bash
+umask 022
+
+#Directories - 777-022=755 --> rwxr-xr-x
+#Files - 666-022=644 --> rw-r--r--
+```
+Like that, umask will disappear after the terminal closes.
+
+✔️To set the umask permanently:
+
+<ul>
+  <li>User-level:</li>
+  
+  ```bash
+  vim .bashrc
+  ```
+  <li>System-wide:</li>
+
+  ```bash
+  vim /etc/profile
+  ```
+</ul>
