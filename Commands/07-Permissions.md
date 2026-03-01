@@ -142,3 +142,25 @@ Like that, umask will disappear after the terminal closes.
   vim /etc/profile
   ```
 </ul>
+
+<hr>
+
+📍Attributes:
+<ol>
+  <li>+i --> immutable (can't modify or delete)</li>
+  <li>+a --> append only </li>
+</ol>
+
+✔️To view the current attributes:
+```bash
+lsattr file1
+```
+
+✔️To add a new attribute or remove (change in total):
+```bash
+chattr +i file1
+chattr +a file1
+
+chattr -i file1
+chattr -a file1
+```
